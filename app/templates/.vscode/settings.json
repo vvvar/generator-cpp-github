@@ -1,0 +1,133 @@
+{
+    // ========== General ========== //
+    "editor.formatOnSave": true,
+    "editor.quickSuggestions": {
+        "comments": "on",
+        "other": "on",
+        "strings": "on"
+    },
+    "files.associations": {
+        "*.profile": "ini",
+    },
+    // ========== C/C++ ========== //
+    "C_Cpp.default.includePath": [
+        "${workspaceFolder}/source",
+        "~/.conan/data/**",
+        "~/.conan2/p/**"
+    ],
+    "C_Cpp.enhancedColorization": "enabled",
+    "C_Cpp.formatting": "clangFormat",
+    "C_Cpp.clang_format_style": "file:${workspaceFolder}/config/.clang-format",
+    "C_Cpp.inlayHints.autoDeclarationTypes.enabled": true,
+    "C_Cpp.inlayHints.autoDeclarationTypes.showOnLeft": true,
+    "C_Cpp.inlayHints.parameterNames.enabled": true,
+    "C_Cpp.inlayHints.parameterNames.suppressWhenArgumentContainsName": true,
+    "C_Cpp.inlayHints.referenceOperator.enabled": true,
+    "C_Cpp.intelliSenseEngine": "default",
+    "C_Cpp.intelliSenseEngineFallback": "disabled",
+    "C_Cpp.codeAnalysis.runAutomatically": true,
+    "C_Cpp.codeAnalysis.clangTidy.enabled": true,
+    "C_Cpp.codeAnalysis.clangTidy.args": [
+        "--config-file=${workspaceFolder}/config/.clang-tidy",
+    ],
+    "C_Cpp.codeAnalysis.clangTidy.path": "/usr/local/bin/clang-tidy",
+    "C_Cpp.codeAnalysis.clangTidy.headerFilter": "*.hpp",
+    "C_Cpp.codeAnalysis.clangTidy.codeAction.formatFixes": true,
+    "C_Cpp.codeAnalysis.clangTidy.useBuildPath": true,
+    "C_Cpp.loggingLevel": "Information",
+    // ========== CMake ========== //
+    "[cmake]": {
+        "editor.quickSuggestions": {
+            "strings": true
+        },
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    // ========== Python ========== //
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    },
+    "python.languageServer": "Pylance",
+    "python.analysis.extraPaths": [
+        "/usr/local/Cellar/conan/2.0.3/libexec/lib/python3.11/site-packages"
+    ],
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "--config",
+        "${workspaceFolder}/config/.black-format"
+    ],
+    // ========== VS Code Extensions ========== //
+    "taskExplorer.enabledTasks": {
+        "ant": false,
+        "bash": false,
+        "composer": false,
+        "gradle": false,
+        "grunt": false,
+        "gulp": false,
+        "make": false,
+        "maven": false,
+        "npm": false,
+        "perl": false,
+        "pipenv": false,
+        "powershell": false,
+        "python": false,
+        "ruby": false,
+        "tsc": false
+    },
+    "taskExplorer.enableSideBar": true,
+    "taskExplorer.groupMaxLevel": 5,
+    "taskExplorer.groupWithSeparator": true,
+    "taskExplorer.groupSeparator": ":",
+    "grammarly.files.include": [
+        "**/README.md",
+        "**/readme.md"
+    ],
+    "cSpell.words": [
+        "appdmg",
+        "armv",
+        "artefacts",
+        "auval",
+        "bindirs",
+        "buildenv",
+        "cmaketoolchain",
+        "codesign",
+        "cppstd",
+        "drywet",
+        "devcontainer",
+        "hexlabs",
+        "Highpass",
+        "juce",
+        "killall",
+        "libc",
+        "libcxx",
+        "libdir",
+        "libstdc",
+        "Lowpass",
+        "mmacosx",
+        "msvc",
+        "myaudioplugin",
+        "notarytool",
+        "pargs",
+        "peakeater",
+        "pluginval",
+        "resdirs",
+        "ULFO",
+        "vvvar",
+        "xcrun",
+        "zfile",
+        "zipresp"
+    ],
+    // ========== Env ========== //
+    "terminal.integrated.shell.osx": "/bin/zsh",
+    "terminal.integrated.env.osx": {
+        "CONAN_LOG_RUN_TO_FILE": "1",
+        "CONAN_DEFAULT_PROFILE": "${workspaceFolder}/config/conan/macos-armv8.profile"
+    },
+    "terminal.integrated.env.windows": {
+        "CONAN_LOG_RUN_TO_FILE": "1",
+        "CONAN_DEFAULT_PROFILE": "${workspaceFolder}/config/conan/windows-x86_64.profile"
+    },
+    "terminal.integrated.env.linux": {
+        "CONAN_LOG_RUN_TO_FILE": "1",
+        "CONAN_DEFAULT_PROFILE": "${workspaceFolder}/config/conan/linux-x86_64.profile"
+    },
+}

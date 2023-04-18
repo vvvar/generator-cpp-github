@@ -1,0 +1,80 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Environment: Init modules",
+      "type": "shell",
+      "command": "git submodule update --init --recursive"
+    },
+    {
+      "label": "Environment: Install System Requirements",
+      "type": "shell",
+      "osx": {
+        "command": "brew update && brew bundle install --file=config/system/requirements.macos.brew.rb"
+      },
+      "windows": {
+        "command": "chocolatey install config/system/requirements.windows.choco.config"
+      },
+      "linux": {
+        "command": "apt-get update && xargs -a config/system/requirements.linux.apt.txt apt-get install -y"
+      }
+    },
+    {
+      "label": "Environment: Install Development Requirements",
+      "type": "shell",
+      "command": "pip3 install -r config/system/requirements.dev.pip.txt"
+    },
+    {
+      "label": "Project: Build",
+      "type": "shell",
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "command": "conan install . && conan build ."
+    },
+    {
+      "label": "Project: Export Package",
+      "type": "shell",
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "command": "conan export-pkg ."
+    },
+    {
+      "label": "Project: SCA",
+      "type": "shell",
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "command": "cppcheck --project=build/Release/compile_commands.json --enable=all -I source --std=c++17 --report-progress"
+    },
+    {
+      "label": "Project: Test",
+      "type": "shell",
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "command": "conan test test <%= ProjectName %>/0.0.1@<%= ProjectConanUser %>/testing"
+    },
+    {
+      "label": "Helpers: Clear Build Artefacts",
+      "type": "shell",
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "osx": {
+        "command": "rm -rf build && rm CMakeUserPresets.json && rm -rf test/build && rm test/CMakeUserPresets.json"
+      }
+    },
+    {
+      "label": "Helpers: Clear Conan Cache",
+      "type": "shell",
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "osx": {
+        "command": "rm -rf ~/.conan2/p"
+      }
+    },
+  ]
+}

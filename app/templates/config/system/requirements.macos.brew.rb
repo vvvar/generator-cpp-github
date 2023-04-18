@@ -1,0 +1,7 @@
+brew "ninja"
+brew "node"
+brew "cmake"
+brew "ccache"
+brew "clang-format"
+brew "llvm"
+brew "cppcheck"

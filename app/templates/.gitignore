@@ -1,0 +1,8 @@
+# Build Folder
+build
+
+# Generated files
+gen
+
+# Conan files
+CMakeUserPresets.json
