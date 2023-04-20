@@ -3,4 +3,4 @@ cd $BASEDIR/../../
 
 brew update && brew bundle install --file=config/system/requirements.macos.brew.rb
 
-conan profile detect
+conan profile detect --force
