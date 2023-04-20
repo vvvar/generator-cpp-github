@@ -2,7 +2,7 @@ name: Release
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   macos:
@@ -98,6 +98,11 @@ jobs:
         with:
             name: build-linux
             path: build-linux
+      - name: Artchive Artifacts
+        run: |
+          zip -r build-macos{.zip,}
+          zip -r build-windows{.zip,}
+          zip -r build-linux{.zip,}
       - uses: ncipollo/release-action@v1
         with:
           allowUpdates: true
