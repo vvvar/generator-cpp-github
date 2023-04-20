@@ -6,19 +6,29 @@
         "other": "on",
         "strings": "on"
     },
+    // ========== Conan ========== //
     "files.associations": {
+        // Assiciate Conan profile with ini
         "*.profile": "ini",
     },
     // ========== C/C++ ========== //
+    // Formatting
     "C_Cpp.default.includePath": [
-        "${workspaceFolder}/include",
-        "${workspaceFolder}/source",
-        "~/.conan/data/**",
-        "~/.conan2/p/**"
+        "${workspaceFolder}/include"
     ],
-    "C_Cpp.enhancedColorization": "enabled",
     "C_Cpp.formatting": "clangFormat",
     "C_Cpp.clang_format_style": "file:${workspaceFolder}/config/.clang-format",
+    "C_Cpp.default.compileCommands": "${workspaceFolder}/build/Release/compile_commands.json",
+    // Code Analysis
+    "C_Cpp.codeAnalysis.runAutomatically": true,
+    "C_Cpp.codeAnalysis.clangTidy.enabled": true,
+    "C_Cpp.codeAnalysis.clangTidy.args": [
+        "--config-file=${workspaceFolder}/config/.clang-tidy",
+    ],
+    "C_Cpp.codeAnalysis.clangTidy.headerFilter": "*.hpp",
+    "C_Cpp.codeAnalysis.clangTidy.codeAction.formatFixes": true,
+    "C_Cpp.codeAnalysis.clangTidy.useBuildPath": true,
+    // InteliSense
     "C_Cpp.inlayHints.autoDeclarationTypes.enabled": true,
     "C_Cpp.inlayHints.autoDeclarationTypes.showOnLeft": true,
     "C_Cpp.inlayHints.parameterNames.enabled": true,
@@ -26,15 +36,8 @@
     "C_Cpp.inlayHints.referenceOperator.enabled": true,
     "C_Cpp.intelliSenseEngine": "default",
     "C_Cpp.intelliSenseEngineFallback": "disabled",
-    "C_Cpp.codeAnalysis.runAutomatically": true,
-    "C_Cpp.codeAnalysis.clangTidy.enabled": true,
-    "C_Cpp.codeAnalysis.clangTidy.args": [
-        "--config-file=${workspaceFolder}/config/.clang-tidy",
-    ],
-    "C_Cpp.codeAnalysis.clangTidy.path": "/usr/local/bin/clang-tidy",
-    "C_Cpp.codeAnalysis.clangTidy.headerFilter": "*.hpp",
-    "C_Cpp.codeAnalysis.clangTidy.codeAction.formatFixes": true,
-    "C_Cpp.codeAnalysis.clangTidy.useBuildPath": true,
+    "C_Cpp.enhancedColorization": "enabled",
+    // Debug
     "C_Cpp.loggingLevel": "Information",
     // ========== CMake ========== //
     "[cmake]": {
@@ -44,19 +47,23 @@
         "editor.defaultFormatter": "josetr.cmake-language-support-vscode",
     },
     // ========== Python ========== //
+    // General
+    "python.languageServer": "Pylance",
+    // Formatting
     "[python]": {
         "editor.defaultFormatter": "ms-python.python"
     },
-    "python.languageServer": "Pylance",
-    "python.analysis.extraPaths": [
-        "/usr/local/Cellar/conan/2.0.3/libexec/lib/python3.11/site-packages"
-    ],
     "python.formatting.provider": "black",
     "python.formatting.blackArgs": [
         "--config",
         "${workspaceFolder}/config/.black-format"
     ],
+    // Analysis
+    "python.analysis.extraPaths": [
+        "/usr/local/Cellar/conan/2.0.3/libexec/lib/python3.11/site-packages"
+    ],
     // ========== VS Code Extensions ========== //
+    // Tasks Runner
     "taskExplorer.enabledTasks": {
         "ant": false,
         "bash": false,
@@ -78,6 +85,7 @@
     "taskExplorer.groupMaxLevel": 5,
     "taskExplorer.groupWithSeparator": true,
     "taskExplorer.groupSeparator": ":",
+    // Spellcheck
     "grammarly.files.include": [
         "**/README.md",
         "**/readme.md"

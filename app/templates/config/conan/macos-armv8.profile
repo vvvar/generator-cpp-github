@@ -9,4 +9,3 @@ os=Macos
 
 [conf]
 tools.cmake.cmaketoolchain:generator=Ninja
-tools.build:cxxflags=["-arch x86_64", "-arch arm64", "-mmacosx-version-min=10.13"]

@@ -132,7 +132,7 @@ module.exports = class extends Generator {
       this._trimFromDirTree(this._tmpPath(""), dirTreeA);
       this._trimFromDirTree(this.destinationPath(""), dirTreeB);
 
-      this.log(jsonDiff.diffString(dirTreeA, dirTreeB), null, 3);
+      this.log(jsonDiff.diffString(dirTreeA, dirTreeB));
     }
   }
 };
