@@ -2,79 +2,78 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Environment: Init modules",
-      "type": "shell",
-      "command": "git submodule update --init --recursive"
-    },
-    {
-      "label": "Environment: Install System Requirements",
+      "label": "Environment: Install",
+      "detail": "Install project tools and initialize dev env",
       "type": "shell",
       "osx": {
-        "command": "brew update && brew bundle install --file=config/system/requirements.macos.brew.rb"
+        "command": "git submodule update --init --recursive && scripts/macos/install.sh"
       },
       "windows": {
-        "command": "chocolatey install config/system/requirements.windows.choco.config"
+        "command": "git submodule update --init --recursive && scripts\\windows\\install.bat"
       },
       "linux": {
-        "command": "apt-get update && xargs -a config/system/requirements.linux.apt.txt apt-get install -y"
+        "command": "git submodule update --init --recursive && scripts/linux/install.sh"
       }
     },
     {
-      "label": "Environment: Install Development Requirements",
-      "type": "shell",
-      "command": "pip3 install -r config/system/requirements.dev.pip.txt"
-    },
-    {
-      "label": "Project: Build",
+      "label": "Environment: Cleanup",
+      "detail": "Cleanup project tmp and generated files",
       "type": "shell",
       "problemMatcher": [
         "$gcc"
       ],
-      "command": "conan install . && conan build ."
+      "command": "scripts/unix/cleanup.sh",
+      "windows": {
+        "command": "scripts\\windows\\cleanup.bat"
+      },
     },
     {
-      "label": "Project: Export Package",
+      "label": "Build",
+      "detail": "Build the project and create a Conan package out of it in local cache",
       "type": "shell",
       "problemMatcher": [
         "$gcc"
       ],
-      "command": "conan export-pkg ."
+      "command": "scripts/unix/build.sh",
+      "windows": {
+        "command": "scripts\\windows\\build.bat"
+      },
     },
     {
-      "label": "Project: SCA",
+      "label": "Quality: SCA",
+      "detail": "Run static code analysis",
       "type": "shell",
       "problemMatcher": [
         "$gcc"
       ],
-      "command": "cppcheck --project=build/Release/compile_commands.json --enable=all -I source --std=c++17 --report-progress"
+      "command": "scripts/unix/sca.sh",
+      "windows": {
+        "command": "scripts\\windows\\sca.bat"
+      },
     },
     {
-      "label": "Project: Test",
+      "label": "Quality: Run Unit Test",
+      "detail": "Run unit-tests",
       "type": "shell",
       "problemMatcher": [
         "$gcc"
       ],
-      "command": "conan test test <%= ProjectName %>/0.0.1@<%= ProjectConanUser %>/testing"
+      "command": "scripts/unix/test_unit.sh",
+      "windows": {
+        "command": "scripts\\windows\\test_unit.bat"
+      },
     },
     {
-      "label": "Helpers: Clear Build Artefacts",
+      "label": "Quality: Run Integration Test",
+      "detail": "Run integration tests",
       "type": "shell",
       "problemMatcher": [
         "$gcc"
       ],
-      "osx": {
-        "command": "rm -rf build && rm CMakeUserPresets.json && rm -rf test/build && rm test/CMakeUserPresets.json"
-      }
-    },
-    {
-      "label": "Helpers: Clear Conan Cache",
-      "type": "shell",
-      "problemMatcher": [
-        "$gcc"
-      ],
-      "osx": {
-        "command": "rm -rf ~/.conan2/p"
-      }
+      "command": "scripts/unix/test_integration.sh",
+      "windows": {
+        "command": "scripts\\windows\\test_integration.bat"
+      },
     },
   ]
 }

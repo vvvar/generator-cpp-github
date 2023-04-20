@@ -1,8 +1,11 @@
 # Build Folder
 build
+Testing
 
 # Generated files
 gen
+requirements.macos.brew.rb.lock.json
 
 # Conan files
 CMakeUserPresets.json
+

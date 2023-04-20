@@ -1,5 +1,7 @@
 git
+jq
 cmake
+cppcheck
 ninja-build
 clang-format
 clang-tidy

@@ -2,9 +2,9 @@
     "name": "generator-conan-cmake",
     "version": "0.1.0",
     "description": "Highly opinionated, pre-configured, Yeoman-based generator for Conan 2.0 and CMake Based apps and libraries",
-    "engines" : { 
-        "npm" : ">=8.3.1",
-        "node" : ">=19.8.1"
+    "engines": {
+        "npm": ">=8.3.1",
+        "node": ">=19.8.1"
     },
     "files": [
         "app"
@@ -13,6 +13,9 @@
         "yeoman-generator"
     ],
     "dependencies": {
+        "dir-compare": "^4.0.0",
+        "directory-tree": "^3.5.1",
+        "json-diff": "^1.0.3",
         "yeoman-generator": "^5.8.0"
     }
 }

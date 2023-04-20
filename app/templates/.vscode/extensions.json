@@ -2,6 +2,8 @@
     "recommendations": [
         "ms-python.python",
         "ms-vscode.cpptools",
+        "Shopify.ruby-lsp",
+        "ms-azuretools.vscode-docker",
         "josetr.cmake-language-support-vscode",
         "spmeesseman.vscode-taskexplorer",
         "github.vscode-github-actions",
@@ -11,6 +13,7 @@
         "ms-vscode-remote.remote-containers",
     ],
     "unwantedRecommendations": [
-        "ms-vscode.cpptools-extension-pack"
+        "ms-vscode.cpptools-extension-pack",
+        "ms-vscode.cmake-tools",
     ]
 }

@@ -11,6 +11,7 @@
     },
     // ========== C/C++ ========== //
     "C_Cpp.default.includePath": [
+        "${workspaceFolder}/include",
         "${workspaceFolder}/source",
         "~/.conan/data/**",
         "~/.conan2/p/**"
@@ -40,7 +41,7 @@
         "editor.quickSuggestions": {
             "strings": true
         },
-        "editor.defaultFormatter": "ms-vscode.cpptools"
+        "editor.defaultFormatter": "josetr.cmake-language-support-vscode",
     },
     // ========== Python ========== //
     "[python]": {

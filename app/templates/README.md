@@ -1,4 +1,4 @@
-<h1 align="center"><a href="<%= ProjectGitRepoUrl %>"><img width="100" src="assets/icon.png" /></a></h1>
+<h1 align="center"><img width="100" src="assets/icon.png" /></h1>
 <h1 align="center"><%= ProjectNamePretty %></h1>
 <p align="center"><%= ProjectDescription %></p>
 <p align="center">

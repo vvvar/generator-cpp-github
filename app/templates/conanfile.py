@@ -1,9 +1,8 @@
 from conan import ConanFile
-from conan.tools.cmake import CMakeToolchain, CMake, cmake_layout
+from conan.tools.cmake import CMakeToolchain, CMakeDeps, CMake, cmake_layout
 
 class ConanProject(ConanFile):
     name = "<%= ProjectName %>"
-    user = "<%= ProjectConanUser %>"
     version = "0.0.1"
     url = "<%= ProjectWebPage %>"
     description = "Description: <%= ProjectDescription %>"
@@ -32,7 +31,7 @@ class ConanProject(ConanFile):
         "!README.md"
     )
 
-    requires = "gtest/cci.20210126"
+    test_requires = "gtest/cci.20210126", 
 
     def validate(self):
         """
@@ -65,6 +64,8 @@ class ConanProject(ConanFile):
         tc.cache_variables["CONAN_PROJECT_VERSION"] = str(self.version)
         tc.cache_variables["CONAN_PROJECT_NAME"] = str(self.name)
         tc.generate()
+        deps = CMakeDeps(self)
+        deps.generate()
 
     def build(self):
         """
@@ -89,4 +90,6 @@ class ConanProject(ConanFile):
         Define package's meta-information that would be consumed by clients(include dirs, source, etc.)
         Documentation - https://docs.conan.io/2/reference/conanfile/methods/package_info.html
         """
-        pass
+        self.cpp_info.libs = ["<%= ProjectName %>"]
+        self.cpp_info.includedirs = ['include']
+        self.cpp_info.libdirs = ['lib']
