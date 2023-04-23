@@ -17,25 +17,69 @@ Branch naming and usage:
 - `bugfix/<short_name>` - bugfixes
 - `experimental/<short_name>` - branches for POCs, experimental feature that are not intended to be merged, etc.
 
+### Pre-requisites
+
+- [Just v1.13.0+](https://github.com/casey/just)
+- [VS Code](https://code.visualstudio.com/download)
+
+## Setting up the project
+
+```sh
+$ just setup
+```
+
+Alternatively, you can use `Setup` task from [tasks.json](../.vscode/tasks.json).
+
 ## Building
 
-Run `Project: Build` task from [tasks.json](../.vscode/tasks.json).
+```sh
+$ just build
+```
 
-## Packaging
+Alternatively, you can use `Build` task from [tasks.json](../.vscode/tasks.json).
 
-Run `Project: Export Package` task from [tasks.json](../.vscode/tasks.json).
+## Running Unit Tests
 
-## Testing
+```sh
+$ just test-unit
+```
 
-Run `Project: Test` task from [tasks.json](../.vscode/tasks.json).
+Alternatively, you can use `Test(Unit)` task from [tasks.json](../.vscode/tasks.json).
 
-## Code Analysis
+## Running Integration Tests
 
-Run `Project: SCA` task from [tasks.json](../.vscode/tasks.json).
+```sh
+$ just test-integration
+```
+
+Alternatively, you can use `Test(Integration)` task from [tasks.json](../.vscode/tasks.json).
+
+## Running Static Code Analysis
+
+```sh
+$ just sca
+```
+
+Alternatively, you can use `SCA` task from [tasks.json](../.vscode/tasks.json).
+
+## Cleaning up workspace
+
+```sh
+$ just cleanup
+```
+
+Alternatively, you can use `Cleanup` task from [tasks.json](../.vscode/tasks.json).
+
+## List all available tasks
+
+```sh
+$ just --list
+```
 
 ## Checking on a CI
 
-All commits passed testing on a CI using GitHub Workflow.
+- [Merge Check Workflow](../.github/workflows/merge_check.yml) will run on every merge request
+- [Release Workflow](../.github/workflows/make_release.yml) will run on every commit into `main` branch
 
 ## Making the release
 

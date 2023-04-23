@@ -9,3 +9,6 @@ requirements.macos.brew.rb.lock.json
 # Conan files
 CMakeUserPresets.json
 
+# macOS files
+.DS_Store
+

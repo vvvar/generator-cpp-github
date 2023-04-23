@@ -108,12 +108,12 @@ module.exports = class extends Generator {
     await this.fs.copyTpl(this.templatePath("examples"), destpath("examples"), CONFIG);
     await this.fs.copyTpl(this.templatePath("include"), destpath("include"), CONFIG);
     await this.fs.copyTpl(this.templatePath("modules"), destpath("modules"), CONFIG);
-    await this.fs.copyTpl(this.templatePath("scripts"), destpath("scripts"), CONFIG);
     await this.fs.copyTpl(this.templatePath("source"), destpath("source"), CONFIG);
     await this.fs.copyTpl(this.templatePath("test"), destpath("test"), CONFIG);
     await this.fs.copyTpl(this.templatePath(".gitignore"), destpath(".gitignore"), CONFIG);
     await this.fs.copyTpl(this.templatePath("CMakeLists.txt"), destpath("CMakeLists.txt"), CONFIG);
     await this.fs.copyTpl(this.templatePath('conanfile.py'), destpath('conanfile.py'), CONFIG);
+    await this.fs.copyTpl(this.templatePath('justfile'), destpath('justfile'), CONFIG);
     await this.fs.copyTpl(this.templatePath("README.md"), destpath("README.md"), CONFIG);
   }
 

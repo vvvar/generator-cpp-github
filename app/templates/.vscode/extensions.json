@@ -3,6 +3,8 @@
         "ms-python.python",
         "ms-vscode.cpptools",
         "Shopify.ruby-lsp",
+        "skellock.just",
+        "redhat.vscode-yaml",
         "ms-azuretools.vscode-docker",
         "josetr.cmake-language-support-vscode",
         "spmeesseman.vscode-taskexplorer",

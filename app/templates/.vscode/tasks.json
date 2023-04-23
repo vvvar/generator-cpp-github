@@ -2,30 +2,10 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Environment: Install",
+      "label": "Setup",
       "detail": "Install project tools and initialize dev env",
       "type": "shell",
-      "osx": {
-        "command": "git submodule update --init --recursive && scripts/macos/install.sh"
-      },
-      "windows": {
-        "command": "git submodule update --init --recursive && scripts\\windows\\install.bat"
-      },
-      "linux": {
-        "command": "git submodule update --init --recursive && scripts/linux/install.sh"
-      }
-    },
-    {
-      "label": "Environment: Cleanup",
-      "detail": "Cleanup project tmp and generated files",
-      "type": "shell",
-      "problemMatcher": [
-        "$gcc"
-      ],
-      "command": "scripts/unix/cleanup.sh",
-      "windows": {
-        "command": "scripts\\windows\\cleanup.bat"
-      },
+      "command": "just setup"
     },
     {
       "label": "Build",
@@ -34,46 +14,40 @@
       "problemMatcher": [
         "$gcc"
       ],
-      "command": "scripts/unix/build.sh",
-      "windows": {
-        "command": "scripts\\windows\\build.bat"
-      },
+      "command": "just build",
     },
     {
-      "label": "Quality: SCA",
-      "detail": "Run static code analysis",
-      "type": "shell",
-      "problemMatcher": [
-        "$gcc"
-      ],
-      "command": "scripts/unix/sca.sh",
-      "windows": {
-        "command": "scripts\\windows\\sca.bat"
-      },
-    },
-    {
-      "label": "Quality: Run Unit Test",
+      "label": "Test(Unit)",
       "detail": "Run unit-tests",
       "type": "shell",
       "problemMatcher": [
         "$gcc"
       ],
-      "command": "scripts/unix/test_unit.sh",
-      "windows": {
-        "command": "scripts\\windows\\test_unit.bat"
-      },
+      "command": "just test-unit",
     },
     {
-      "label": "Quality: Run Integration Test",
+      "label": "Test(Integration)",
       "detail": "Run integration tests",
       "type": "shell",
       "problemMatcher": [
         "$gcc"
       ],
-      "command": "scripts/unix/test_integration.sh",
-      "windows": {
-        "command": "scripts\\windows\\test_integration.bat"
-      },
+      "command": "just test-integration",
+    },
+    {
+      "label": "SCA",
+      "detail": "Run static code analysis",
+      "type": "shell",
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "command": "just sca",
+    },
+    {
+      "label": "Cleanup",
+      "detail": "Cleanup project tmp and generated files",
+      "type": "shell",
+      "command": "just cleanup",
     },
   ]
 }
