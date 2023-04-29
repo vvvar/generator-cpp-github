@@ -1,4 +1,4 @@
-# CPPgen
+# cppgen
 
 Yeoman-based generator of C++ apps and libraries with tech stack:
 - Conan 2.0
