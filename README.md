@@ -27,11 +27,17 @@ npm link
 ### Generate C++ Library project
 
 ```sh
-yo cppgen:lib
+yo cppgen:cpplib
 ```
 
 ### Generate C++ Application project
 
 ```sh
-yo cppgen:app
+yo cppgen:cppapp
+```
+
+### Validate project folder structure
+
+```sh
+yo cppgen:[type] --validate
 ```
