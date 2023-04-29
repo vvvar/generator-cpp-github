@@ -19,6 +19,7 @@ npm install -g yo
 4. Add this generator
 ```sh
 cd /path/to/cloned/repo
+npm install
 npm link
 ```
 
@@ -35,6 +36,8 @@ yo cppgen:cpplib
 ```sh
 yo cppgen:cppapp
 ```
+
+[Example](https://github.com/vvvar/yo-cppgen-example-app)
 
 ### Validate project folder structure
 
