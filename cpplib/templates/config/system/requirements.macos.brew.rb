@@ -1,0 +1,8 @@
+brew "ninja"
+brew "node"
+brew "cmake"
+brew "ccache"
+brew "llvm"
+brew "python3"
+brew "cppcheck"
+brew "jq"

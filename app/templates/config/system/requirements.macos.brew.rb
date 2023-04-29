@@ -1,7 +1,0 @@
-brew "ninja"
-brew "node"
-brew "cmake"
-brew "ccache"
-brew "llvm"
-brew "cppcheck"
-brew "jq"

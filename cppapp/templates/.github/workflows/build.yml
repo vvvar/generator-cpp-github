@@ -1,0 +1,90 @@
+name: Build & Ensure Quality
+
+env:
+  ARTEFACT_NAME_MACOS: macOS
+  ARTEFACT_NAME_WINDOWS: Windows
+  ARTEFACT_NAME_LINUX: Linux
+
+on: 
+  workflow_call:
+    outputs:
+      artifact-name-macos:
+        description: "Name of the build artifact for macOS"
+        value: ${{ github.env.ARTEFACT_NAME_MACOS }}
+      artifact-name-windows:
+        description: "Name of the build artifact for Windows"
+        value: ${{ github.env.ARTEFACT_NAME_WINDOWS }}
+      artifact-name-linux:
+          description: "Name of the build artifact for Linux"
+          value: ${{ github.env.ARTEFACT_NAME_LINUX }}
+
+jobs:
+  macos:
+    name: macOS
+    runs-on: macos-12
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: "recursive"
+      - uses: extractions/setup-just@v1
+        with:
+          just-version: 1.13.0
+      - name: Setup
+        run: just setup
+      - name: Build
+        run: just build
+      - name: Test
+        run: just test
+      - name: SCA
+        run: just sca
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ env.ARTEFACT_NAME_MACOS }}
+          path: build/Release
+
+  windows:
+    name: Windows
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: "recursive"
+      - uses: extractions/setup-just@v1
+        with:
+          just-version: 1.13.0
+      - name: Setup
+        run: just setup
+      - name: Build
+        run: just build
+      - name: Test
+        run: just test
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ env.ARTEFACT_NAME_WINDOWS }}
+          path: build/Release
+
+  linux:
+    name: Linux
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: "recursive"
+      - uses: extractions/setup-just@v1
+        with:
+          just-version: 1.13.0
+      - name: Setup
+        run: just setup
+      - name: Build
+        run: just build
+      - name: Test
+        run: just test
+      - name: SCA
+        run: just sca
+      - name: Upload
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ env.ARTEFACT_NAME_LINUX }}
+          path: build/Release
