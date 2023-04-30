@@ -11,52 +11,35 @@
       "label": "Build",
       "detail": "Build the project and create a Conan package out of it in local cache",
       "type": "shell",
-      "problemMatcher": [
-        "$gcc"
-      ],
-      "command": "just build",
+      "problemMatcher": ["$gcc"],
+      "command": "just build"
     },
     {
       "label": "Test: All",
       "detail": "Run all available tests",
       "type": "shell",
-      "problemMatcher": [
-        "$gcc"
-      ],
-      "command": "just test",
+      "problemMatcher": ["$gcc"],
+      "command": "just test"
     },
     {
       "label": "Test: Unit",
       "detail": "Run unit-tests",
       "type": "shell",
-      "problemMatcher": [
-        "$gcc"
-      ],
-      "command": "just test-unit",
-    },
-    {
-      "label": "Test: Integration",
-      "detail": "Run integration tests",
-      "type": "shell",
-      "problemMatcher": [
-        "$gcc"
-      ],
-      "command": "just test-integration",
+      "problemMatcher": ["$gcc"],
+      "command": "just test-unit"
     },
     {
       "label": "SCA",
       "detail": "Run static code analysis",
       "type": "shell",
-      "problemMatcher": [
-        "$gcc"
-      ],
-      "command": "just sca",
+      "problemMatcher": ["$gcc"],
+      "command": "just sca"
     },
     {
       "label": "Cleanup",
       "detail": "Cleanup project tmp and generated files",
       "type": "shell",
-      "command": "just cleanup",
-    },
+      "command": "just cleanup"
+    }
   ]
 }

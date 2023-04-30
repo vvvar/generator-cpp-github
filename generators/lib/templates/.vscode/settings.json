@@ -1,0 +1,117 @@
+{
+  // ========== General ========== //
+  "editor.formatOnSave": true,
+  "editor.quickSuggestions": {
+    "comments": "on",
+    "other": "on",
+    "strings": "on"
+  },
+  // ========== Conan ========== //
+  "files.associations": {
+    // Assiciate Conan profile with ini
+    "*.profile": "ini"
+  },
+  // ========== C/C++ ========== //
+  // Formatting
+  "C_Cpp.default.includePath": ["${workspaceFolder}/include"],
+  "C_Cpp.formatting": "clangFormat",
+  "C_Cpp.clang_format_style": "file:${workspaceFolder}/config/.clang-format",
+  "C_Cpp.default.compileCommands": "${workspaceFolder}/build/Release/compile_commands.json",
+  // Code Analysis
+  "sonarlint.pathToCompileCommands": "${workspaceFolder}/build/Release/compile_commands.json",
+  // InteliSense
+  "C_Cpp.inlayHints.autoDeclarationTypes.enabled": true,
+  "C_Cpp.inlayHints.autoDeclarationTypes.showOnLeft": true,
+  "C_Cpp.inlayHints.parameterNames.enabled": true,
+  "C_Cpp.inlayHints.parameterNames.suppressWhenArgumentContainsName": true,
+  "C_Cpp.inlayHints.referenceOperator.enabled": true,
+  "C_Cpp.intelliSenseEngine": "default",
+  "C_Cpp.intelliSenseEngineFallback": "disabled",
+  "C_Cpp.enhancedColorization": "enabled",
+  // ========== CMake ========== //
+  "[cmake]": {
+    "editor.quickSuggestions": {
+      "strings": true
+    },
+    "editor.defaultFormatter": "josetr.cmake-language-support-vscode"
+  },
+  // ========== Python ========== //
+  // General
+  "python.languageServer": "Pylance",
+  // Formatting
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": ["--config", "${workspaceFolder}/config/.black-format"],
+  // ========== JavaScript ========== //
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // Analysis
+  "python.analysis.extraPaths": ["/usr/local/Cellar/conan/2.0.3/libexec/lib/python3.11/site-packages"],
+  // ========== VS Code Extensions ========== //
+  // CPP VS Code Extension
+  "C_Cpp.loggingLevel": "Information",
+  // Tasks Runner
+  "taskExplorer.enabledTasks": {
+    "ant": false,
+    "bash": false,
+    "composer": false,
+    "gradle": false,
+    "grunt": false,
+    "gulp": false,
+    "make": false,
+    "maven": false,
+    "npm": false,
+    "perl": false,
+    "pipenv": false,
+    "powershell": false,
+    "python": false,
+    "ruby": false,
+    "tsc": false
+  },
+  "taskExplorer.enableSideBar": true,
+  "taskExplorer.groupMaxLevel": 5,
+  "taskExplorer.groupWithSeparator": true,
+  "taskExplorer.groupSeparator": ":",
+  // Spellcheck
+  "grammarly.files.include": ["**/README.md", "**/readme.md"],
+  "cSpell.words": [
+    "appdmg",
+    "armv",
+    "artefacts",
+    "auval",
+    "bindirs",
+    "buildenv",
+    "cmaketoolchain",
+    "codesign",
+    "cppstd",
+    "drywet",
+    "devcontainer",
+    "hexlabs",
+    "Highpass",
+    "juce",
+    "killall",
+    "libc",
+    "libcxx",
+    "libdir",
+    "libstdc",
+    "Lowpass",
+    "mmacosx",
+    "msvc",
+    "myaudioplugin",
+    "notarytool",
+    "pargs",
+    "peakeater",
+    "pluginval",
+    "resdirs",
+    "ULFO",
+    "vvvar",
+    "xcrun",
+    "zfile",
+    "zipresp"
+  ],
+  // ========== VS Code Integrated Terminal ========== //
+  "terminal.integrated.scrollback": 99999999
+}

@@ -10,6 +10,7 @@
 ![screenshot](assets/screenshot.png)
 
 ## Table of Contents
+
 - [About](#about)
 - [Platform Support](#platform-support)
 - [Features](#features)
@@ -51,12 +52,12 @@ See [`Development`](doc/DEVELOPMENT.md) document.
 
 ## Contributing
 
-See [`Contributing`](doc/CONTRIBUTING.md) document.
+See [`Contributing`](docs/CONTRIBUTING.md) document.
 
-## Licenses
+## Licensing
 
-See [`License`](doc/LICENSE.md) document.
+See [`License`](LICENSE.md) document.
 
 ## Maintainers
 
-* [Write an E-Mail](mailto:<%= ProjectMaintainersEmail %>)
+- [Write an E-Mail](mailto:<%= ProjectMaintainersEmail %>)
