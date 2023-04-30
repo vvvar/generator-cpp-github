@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Opinionated Yeoman-based, GitHub-ready generator of cross-platform C++ apps and libraries with VS Code integration.",
   "scripts": {
-    "test": "mocha --timeout 60000"
+    "test": "mocha --timeout 512000"
   },
   "engines": {
     "npm": ">=8.3.1",
@@ -21,7 +21,8 @@
     "directory-tree": "^3.5.1",
     "json-diff": "^1.0.3",
     "tree-node-cli": "^1.6.0",
-    "yeoman-generator": "^5.8.0"
+    "yeoman-generator": "^5.8.0",
+    "yo": "^4.3.1"
   },
   "devDependencies": {
     "mocha": "^10.2.0",

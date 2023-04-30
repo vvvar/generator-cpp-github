@@ -3,5 +3,19 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   // Spellcheck
-  "cSpell.words": ["armv", "ccache", "choco", "conanfile", "cppapp", "cppgen", "cpplib", "devcontainer", "Grammarly", "justfile", "massert"]
+  "cSpell.words": [
+    "armv",
+    "ccache",
+    "choco",
+    "conanfile",
+    "cppapp",
+    "cppcheck",
+    "cppgen",
+    "cpplib",
+    "devcontainer",
+    "Grammarly",
+    "justfile",
+    "massert",
+    "MSVC"
+  ]
 }
