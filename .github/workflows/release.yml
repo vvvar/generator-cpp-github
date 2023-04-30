@@ -16,3 +16,6 @@ jobs:
     name: Publish Release Draft
     runs-on: ubuntu-latest
     needs: [build]
+    steps:
+      - name: Placeholder
+        run: echo All good
