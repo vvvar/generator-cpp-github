@@ -1,0 +1,20 @@
+{
+  "recommendations": [
+    "ms-python.python",
+    "ms-vscode.cpptools",
+    "esbenp.prettier-vscode",
+    "Shopify.ruby-lsp",
+    "skellock.just",
+    "redhat.vscode-yaml",
+    "ms-azuretools.vscode-docker",
+    "josetr.cmake-language-support-vscode",
+    "spmeesseman.vscode-taskexplorer",
+    "github.vscode-github-actions",
+    "znck.grammarly",
+    "AmazonWebServices.aws-toolkit-vscode",
+    "shd101wyy.markdown-preview-enhanced",
+    "streetsidesoftware.code-spell-checker",
+    "ms-vscode-remote.remote-containers"
+  ],
+  "unwantedRecommendations": ["ms-vscode.cpptools-extension-pack", "ms-vscode.cmake-tools"]
+}

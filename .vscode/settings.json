@@ -1,8 +1,7 @@
 {
-    "cSpell.words": [
-        "ccache",
-        "cppapp",
-        "cppgen",
-        "cpplib"
-    ]
+  // JS
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  // Spellcheck
+  "cSpell.words": ["armv", "ccache", "choco", "conanfile", "cppapp", "cppgen", "cpplib", "devcontainer", "Grammarly", "justfile", "massert"]
 }
