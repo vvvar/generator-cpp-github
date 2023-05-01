@@ -12,7 +12,7 @@ jobs:
           submodules: "recursive"
       - uses: actions/setup-node@v3
         with:
-          node-version: 20.0.0
+          node-version-file: 'package.json'
       - uses: extractions/setup-just@v1
         with:
           just-version: 1.13.0
@@ -30,7 +30,7 @@ jobs:
           submodules: "recursive"
       - uses: actions/setup-node@v3
         with:
-          node-version: 20.0.0
+          node-version-file: 'package.json'
       - uses: extractions/setup-just@v1
         with:
           just-version: 1.13.0
@@ -48,7 +48,7 @@ jobs:
           submodules: "recursive"
       - uses: actions/setup-node@v3
         with:
-          node-version: 20.0.0
+          node-version-file: 'package.json'
       - uses: extractions/setup-just@v1
         with:
           just-version: 1.13.0

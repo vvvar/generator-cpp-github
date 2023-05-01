@@ -27,37 +27,34 @@ To address all that, I've made this generator. Primary for myself. With technolo
 
 ## Installation
 
-1. Install [`nodejs`](https://nodejs.org/en)
-2. Install [`Yeoman`](https://yeoman.io)
+Pre-requisites:
+- [Node.js 18.16.0+](https://nodejs.org)
+- [Yeoman 4.3.1+](https://yeoman.io)
+- [VS Code 1.77.3+](https://code.visualstudio.com)
 
 ```sh
-npm install -g yo
-```
-
-3. Clone this repo
-4. Add this generator
-
-```sh
-cd /path/to/cloned/repo
-npm install
-npm link
+npm install -g generator-cpp-github
 ```
 
 ## Usage
 
-### Generate C++ Library project
+### Generate C++ Application into the current dir
 
 ```sh
 yo cpp-github:app
+code .
 ```
 
-### Generate C++ Application project
+See an [example](https://github.com/vvvar/generator-cpp-github-example-app) of the project that has been generated with it.
+
+### Generate C++ Library into the current dir
 
 ```sh
 yo cpp-github:lib
+code .
 ```
 
-[Example](https://github.com/vvvar/yo-cppgen-example-app)
+See an [example](https://github.com/vvvar/generator-cpp-github-example-lib) of the project that has been generated with it.
 
 ### Validate project folder structure
 
