@@ -1,0 +1,39 @@
+name: Publish Package to the npmjs and pkg.github
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    name: Publish the Package to the registries
+    runs-on: ubuntu-latest
+    permissions:
+        contents: read
+        id-token: write
+    steps:
+        - uses: actions/checkout@v3
+        # Setup .npmrc file to publish to the NPM
+        - uses: actions/setup-node@v3
+          with:
+            node-version-file: 'package.json'
+            registry-url: 'https://registry.npmjs.org'
+        - name: Publish to the NPM
+          run: |
+            npm install -g npm
+            npm ci
+            npm publish --provenance --access public
+          env:
+            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        # Setup .npmrc file to publish to the GitHub Packages
+        - uses: actions/setup-node@v3
+          with:
+            node-version-file: 'package.json'
+            registry-url: 'https://npm.pkg.github.com'
+        - name: Publish to the GitHub Packages
+          run: |
+            npm install -g npm
+            npm ci
+            npm publish --provenance --access public
+          env:
+            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

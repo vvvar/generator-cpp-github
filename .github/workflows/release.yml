@@ -13,9 +13,14 @@ jobs:
     uses: ./.github/workflows/build.yml
 
   release:
-    name: Publish Release Draft
+    name: Create Release Draft
     runs-on: ubuntu-latest
     needs: [build]
     steps:
-      - name: Placeholder
-        run: echo All good
+      - uses: actions/checkout@v3
+      - uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: true
+          draft: true
+          removeArtifacts: true
+          makeLatest: true
