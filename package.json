@@ -1,6 +1,6 @@
 {
   "name": "generator-cpp-github",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Opinionated, Yeoman-based, GitHub-ready generator of cross-platform C++20 CMake/Conan 2.0 apps and libraries with code-quality checks and VS Code integration",
   "repository": {
     "type": "git",
