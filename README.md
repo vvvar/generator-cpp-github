@@ -1,6 +1,6 @@
 # generator-cpp-github
 
-Opinionated Yeoman-based, GitHub-ready generator of cross-platform C++20 apps and libraries with VS Code integration.
+Opinionated, Yeoman-based, GitHub-ready generator of cross-platform C++20 CMake/Conan 2.0 apps and libraries with code-quality checks and VS Code integration.
 
 ## Motivation
 
