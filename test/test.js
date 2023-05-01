@@ -85,6 +85,10 @@ describe(getGeneratorName(), function () {
       yeomanAssert.file(["LICENSE.md"]);
     });
 
+    it("should generate .gitignore", async function () {
+      yeomanAssert.file([".gitignore"]);
+    });
+
     it("should generate project contribution guide", async function () {
       yeomanAssert.file(["docs/CONTRIBUTING.md"]);
     });
@@ -194,6 +198,10 @@ describe(getGeneratorName(), function () {
 
     it("should generate code-formatting configurations", async function () {
       yeomanAssert.file(["config/.black-format", "config/.clang-format"]);
+    });
+
+    it("should generate .gitignore", async function () {
+      yeomanAssert.file([".gitignore"]);
     });
 
     it("should generate project license", async function () {

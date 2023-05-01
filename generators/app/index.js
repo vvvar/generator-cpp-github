@@ -9,6 +9,24 @@ const isValidProjectName = (str) => {
   return !str.includes("_") && !str.includes(" ") && !/[A-Z]/.test(str);
 };
 
+// Generate .gitignore instead of copying
+// because npm wont allow to package .gitignore with generator
+const gitignore = `
+# Build Folder
+build
+Testing
+
+# Generated files
+gen
+requirements.macos.brew.rb.lock.json
+
+# Conan files
+CMakeUserPresets.json
+
+# macOS files
+.DS_Store
+`;
+
 const isValidUrl = (urlString) => {
   const urlPattern = new RegExp(
     "^(https?:\\/\\/)?" + // validate protocol
@@ -135,7 +153,7 @@ module.exports = class extends Generator {
     this.fs.copyTpl(this.templatePath("modules"), this._destPath("modules"), CONFIG);
     this.fs.copyTpl(this.templatePath("source"), this._destPath("source"), CONFIG);
     this.fs.copyTpl(this.templatePath("test"), this._destPath("test"), CONFIG);
-    this.fs.copyTpl(this.templatePath(".gitignore"), this._destPath(".gitignore"), CONFIG);
+    this.fs.write(this._destPath(".gitignore"), gitignore);
     this.fs.copyTpl(this.templatePath("CMakeLists.txt"), this._destPath("CMakeLists.txt"), CONFIG);
     this.fs.copyTpl(this.templatePath("conanfile.py"), this._destPath("conanfile.py"), CONFIG);
     this.fs.copyTpl(this.templatePath("justfile"), this._destPath("justfile"), CONFIG);

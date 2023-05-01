@@ -1,11 +1,11 @@
 {
   "name": "generator-cpp-github",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Opinionated, Yeoman-based, GitHub-ready generator of cross-platform C++20 CMake/Conan 2.0 apps and libraries with code-quality checks and VS Code integration",
   "repository": {
     "type": "git",
     "url": "https://github.com/vvvar/generator-cpp-github.git"
-  }, 
+  },
   "scripts": {
     "test": "mocha --timeout 632000"
   },
