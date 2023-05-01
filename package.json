@@ -6,6 +6,7 @@
     "type": "git",
     "url": "https://github.com/vvvar/generator-cpp-github.git"
   },
+  "license": "GPL-3.0",
   "scripts": {
     "test": "mocha --timeout 632000"
   },
