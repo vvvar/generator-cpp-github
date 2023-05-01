@@ -24,4 +24,4 @@ jobs:
           draft: true
           removeArtifacts: true
           makeLatest: true
-          tag: '0.1.0'
+          tag: '0.1.1'

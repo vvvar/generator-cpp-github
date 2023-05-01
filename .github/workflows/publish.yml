@@ -5,8 +5,8 @@ on:
     types: [published]
 
 jobs:
-  publish:
-    name: Publish the Package to the registries
+  npm:
+    name: Publish the Package to the NPM
     runs-on: ubuntu-latest
     permissions:
         contents: read
@@ -25,6 +25,15 @@ jobs:
             npm publish --provenance --access public
           env:
             NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  github:
+    name: Publish the Package to the GitHub
+    runs-on: ubuntu-latest
+    permissions:
+        contents: read
+        id-token: write
+    steps:
+        - uses: actions/checkout@v3
         # Setup .npmrc file to publish to the GitHub Packages
         - uses: actions/setup-node@v3
           with:
