@@ -1,11 +1,11 @@
 # generator-cpp-github
 
-Opinionated, Yeoman-based, GitHub-ready generator of cross-platform C++20 CMake/Conan 2.0 apps and libraries with code-quality checks and VS Code integration.
+Generator for [Yeoman](https://yeoman.io) that scaffolds cross-platform C++ projects with GitHub and VS Code integrations.
 
 ## Motivation
 
-I like trying new ideas with C++. Setting up a new C++ project for me is so time-consuming that I often find myself spending more time configuring it than actually coding. On top of that, I tend to skip quality tools such as unit testing, SCA and linting in the early stages and then suffer to make them work on an already-existing code base.
-To address all that, I've made this generator. Primary for myself. With technologies that I am often using. With structure that makes sense best to me. Then I thought it could be useful for somebody. So here it is.
+I like trying new ideas with C++. Setting up a new C++ project for me is so time-consuming that I often find myself spending more time configuring it than actually coding. On top of that, I tend to skip quality tools such as unit testing, SCA and linting in the early stages and then suffer to make them work with already-existing code base.
+To address all that, I've made this generator. For myself. With technologies that I am often using. With structure that makes sense best to me. Then I thought it could be useful for somebody. So here it is.
 
 ## Tech Stack
 
@@ -28,7 +28,7 @@ To address all that, I've made this generator. Primary for myself. With technolo
 ## Installation
 
 Pre-requisites:
-- [Node.js 18.16.0+](https://nodejs.org)
+- [Node.js 18.16.0+](https://nodejs.org/en/download)
 - [Yeoman 4.3.1+](https://yeoman.io)
 - [VS Code 1.77.3+](https://code.visualstudio.com)
 
